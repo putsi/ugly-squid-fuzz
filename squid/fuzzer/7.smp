@@ -1,0 +1,15 @@
+OPTIONS /url?param=param HTTP/1.1
+Host: localhost
+X-Forwarded-For: 192.168.10.1
+Connection: Close
+Accept-Charset: utf-8, iso-8859-1;q=0.5
+Accept-Language: utf-8, iso-8859-1;q=0.5, *;q=0.1
+Cookie: name=value; name2=value2; name3=value3
+If-Modified-Since: Wed, 21 Oct 2015 07:28:00 GMT
+X-Request-ID: f058ebd6-02f7-4d3f-942e-904344e8cde5
+X-Forwarded-Host: localhost:8080
+X-Forwarded-For: client1, proxy1, proxy2
+Proxy-Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+Proxy-Connection: close
+
+Message content

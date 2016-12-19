@@ -17,7 +17,7 @@ while true; do
 
     # Run the fuzzing
     for test in $(ls case1/*); do
-        cat $test |nc 127.0.0.1 3128 >/dev/null;
+        cat $test |ncat 127.0.0.1 3128 >/dev/null;
         pgrep "startsquid" || exit
     done
 
@@ -30,7 +30,7 @@ while true; do
 
     # Run the fuzzing
     for test in $(ls case2/*); do
-        cat $test |nc 127.0.0.1 3128 >/dev/null;
+        cat $test |ncat 127.0.0.1 3128 >/dev/null;
         pgrep "startsquid" || exit
     done
 
@@ -43,7 +43,7 @@ while true; do
 
     # Run the fuzzing
     for test in $(ls case3/*); do
-        cat $test |nc 127.0.0.1 3128 >/dev/null;
+        cat $test |ncat 127.0.0.1 3128 >/dev/null;
         pgrep "startsquid" || exit
     done
 

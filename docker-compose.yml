@@ -1,6 +1,6 @@
 version: '2'
 
 services:
-  squid:
-    build: squid
-    image: squid
+  squid-fuzzer:
+    build: squid-fuzzer
+    image: squid-fuzzer

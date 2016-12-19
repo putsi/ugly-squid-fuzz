@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install build-essential git gcc make wget
+RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install build-essential git gcc make wget nmap
 
 WORKDIR /tmp
 
@@ -17,8 +17,9 @@ RUN CXXFLAGS="-Wno-error -fsanitize=address -fPIC" CFLAGS="-Wno-error -fsanitize
 RUN CXXFLAGS="-Wno-error -fsanitize=address -fPIC" CFLAGS="-Wno-error -fsanitize=address -fPIC" make install
 RUN mkdir /var/log/squid/; chmod 777 /var/log/squid && touch /var/log/squid/cache.log && chmod 777 /var/log/squid/cache.log && touch /var/log/squid/access.log && chmod 777 /var/log/squid/access.log
 
-RUN mkdir /fuzzer
 ADD fuzzer/* /fuzzer/
+RUN mkdir /fuzzer/case1 /fuzzer/case2 /fuzzer/case3
+RUN chmod 777 -R /fuzzer
 
 WORKDIR /fuzzer/
 

@@ -18,8 +18,8 @@ while true; do
     # Run the fuzzing
     for test in $(ls case1/*); do
         cat $test |ncat 127.0.0.1 3128 >/dev/null;
-        pgrep "startsquid" || exit
     done
+    pgrep "startsquid" || exit
 
     # Create 800 test cases to case2
     echo "$(date): Deleting case2 testcases and creating 800 new ones!"
@@ -31,8 +31,8 @@ while true; do
     # Run the fuzzing
     for test in $(ls case2/*); do
         cat $test |ncat 127.0.0.1 3128 >/dev/null;
-        pgrep "startsquid" || exit
     done
+    pgrep "startsquid" || exit
 
     # Create 800 test cases to case3
     echo "$(date): Deleting case3 testcases and creating 800 new ones!"
@@ -44,8 +44,8 @@ while true; do
     # Run the fuzzing
     for test in $(ls case3/*); do
         cat $test |ncat 127.0.0.1 3128 >/dev/null;
-        pgrep "startsquid" || exit
     done
+    pgrep "startsquid" || exit
 
     echo "$(date): All done fuzzing 2400 different testcases in case1&case2&case3"
     echo "$(date): Starting again from case1!"
